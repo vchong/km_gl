@@ -39,8 +39,6 @@ LOCAL_SRC_FILES := \
 
 LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH)/ta/include
-#	external/optee-client/public \
-#no need since optee-client/public is exported in optee_client/Android.mk
 
 LOCAL_SHARED_LIBRARIES := \
 	libteec \
@@ -57,13 +55,6 @@ include $(BUILD_EXECUTABLE)
 ################################################################################
 # Build keymaster HAL TA                                                       #
 ################################################################################
-
-# Please keep this variable consistent with TA_KEYMASTER_UUID define that
-# defined in ta/include/common.h file
-#TA_UUID:=dba51a17-0563-11e7-93b16fa7b0071a51
-#TA_SRC:=$(LOCAL_PATH)/ta
-
-#include $(LOCAL_PATH)/ta/build_executable.mk
 include $(LOCAL_PATH)/ta/Android.mk
 
 endif # Include only for HiKey ones.
