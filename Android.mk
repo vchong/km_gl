@@ -13,7 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Include only for HiKey ones.
+# Include only for HiKey ones in space separated list
+# E.g. hikey hikey960 hikey970
 ifneq (,$(filter $(TARGET_PRODUCT), hikey))
 LOCAL_PATH:= $(call my-dir)
 
@@ -37,8 +38,9 @@ LOCAL_SRC_FILES := \
 	optee_keymaster_ipc.c
 
 LOCAL_C_INCLUDES := \
-	external/optee-client/public \
 	$(LOCAL_PATH)/ta/include
+#	external/optee-client/public \
+#no need since optee-client/public is exported in optee_client/Android.mk
 
 LOCAL_SHARED_LIBRARIES := \
 	libteec \
@@ -58,9 +60,10 @@ include $(BUILD_EXECUTABLE)
 
 # Please keep this variable consistent with TA_KEYMASTER_UUID define that
 # defined in ta/include/common.h file
-TA_UUID:=dba51a17-0563-11e7-93b16fa7b0071a51
-TA_SRC:=$(LOCAL_PATH)/ta
+#TA_UUID:=dba51a17-0563-11e7-93b16fa7b0071a51
+#TA_SRC:=$(LOCAL_PATH)/ta
 
-include $(LOCAL_PATH)/ta/build_executable.mk
+#include $(LOCAL_PATH)/ta/build_executable.mk
+include $(LOCAL_PATH)/ta/Android.mk
 
 endif # Include only for HiKey ones.

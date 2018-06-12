@@ -18,6 +18,11 @@
 #ifndef ANDROID_OPTEE_GENERATOR_H
 #define ANDROID_OPTEE_GENERATOR_H
 
+// TODO: these should eventually go to tee_api_defines.h in optee_os
+#define TEE_ALG_RSASSA_PKCS1_V1_5 0x70000830
+#define TEE_ALG_RSASSA_PKCS1_PSS_MGF1_MD5 0x70717930
+#define TEE_ALG_RSAES_PKCS1_OAEP_MGF1_MD5 0x60710230
+
 #define KM_ATTR_COUNT_AES_HMAC 1
 #define KM_ATTR_COUNT_RSA 8
 #define KM_ATTR_COUNT_EC 4
