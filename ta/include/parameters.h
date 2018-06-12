@@ -130,7 +130,7 @@ static inline keymaster_ec_curve_t TA_size_to_ECcurve(uint32_t key_size)
 	}
 }
 
-inline uint32_t TA_ECcurve_to_size(keymaster_ec_curve_t curve)
+static inline uint32_t TA_ECcurve_to_size(keymaster_ec_curve_t curve)
 {
 	switch (curve) {
 	case KM_EC_CURVE_P_224:

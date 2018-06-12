@@ -375,7 +375,15 @@ keymaster_error_t TA_rsa_update(keymaster_operation_t *operation,
 			output->data_length = *out_size;
 			break;
 		}
-		__attribute__((fallthrough));
+		/* fall through */
+		/* __attribute__((fallthrough)); */
+		/* https://stackoverflow.com/questions/45349079/how-to-use-attribute-fallthrough-correctly-in-gcc */
+		/*
+		 * __attribute__ ((fallthrough)) was introduced in GCC 7. To
+		 * maintain backward compatibility and clear the fall through
+		 * warning for both Clang and GCC, you can use the "fall
+		 * through" marker comment.
+		 */
 	case KM_PURPOSE_VERIFY:
 	case KM_PURPOSE_SIGN:
 		if (*operation->digest_op != TEE_HANDLE_NULL) {
