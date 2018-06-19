@@ -47,6 +47,16 @@
 		{ 0x57ff3310, 0x0919, 0x4935, \
 			{ 0xb9, 0xc8, 0x32, 0xa4, 0x1d, 0x94, 0xb9, 0x5b } }
 
+/*
+ * Interface to the pseudo TA, which is provides misc. auxiliary services,
+ * extending existing GlobalPlatform Core API
+ */
+
+#define PTA_SYSTEM_UUID { 0x3a2f8978, 0x5dc0, 0x11e8, { \
+			 0x9c, 0x2d, 0xfa, 0x7a, 0xe0, 0x1b, 0xbe, 0xbc } }
+
+#define PTA_SYSTEM_ADD_RNG_ENTROPY	0
+
 #define CMD_ADD_RNG_ENTROPY 0
 
 /* Empty definitions */
