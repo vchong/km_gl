@@ -53,14 +53,12 @@ TEE_Result TA_CreateEntryPoint(void)
 		goto exit;
 	}
 
-#if 0
 	res = TEE_OpenTASession(&asn1_parser_uuid, TEE_TIMEOUT_INFINITE,
 			exp_param_types, params, &sessionSTA, NULL);
 	if (res != TEE_SUCCESS) {
 		EMSG("Failed to create session with ASN.1 static TA (%x)", res);
 		goto exit;
 	}
-#endif
 
 	res = TEE_OpenTASession(&rng_entropy_uuid, TEE_TIMEOUT_INFINITE,
 			exp_param_types, params, &session_rngSTA, NULL);
