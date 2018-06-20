@@ -14,3 +14,8 @@ srcs-y += crypto_rsa.c
 srcs-y += shift.c
 srcs-y += crypto_ec.c
 srcs-y += attestation.c
+ifeq ($(CFG_KMC),y)
+srcs-y += pack.c
+srcs-y += km.c
+srcs-y += km_key_param.c
+endif
